@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拯救12.12拥抱圣诞君</title>
+	<!-- 头部公共部分 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="css/base.css?v=14d8065b0dd2a4ebaa597459ff89b66c">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="static/js/base64.js?v=1044ea68f82a0322f1f9ec406fbf0260"></script>
+<!-- 引入移动端适配方案 -->
+<script>!function(e,t){function i(){var t=n.getBoundingClientRect().width;t/m>540&&(t=540*m);var i=t/10;n.style.fontSize=i+"px",d.rem=e.rem=i}var a,r=e.document,n=r.documentElement,o=r.querySelector('meta[name="viewport"]'),l=r.querySelector('meta[name="flexible"]'),m=0,s=0,d=t.flexible||(t.flexible={});if(o){console.warn("将根据已有的meta标签来设置缩放比例");var p=o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);p&&(s=parseFloat(p[1]),m=parseInt(1/s))}else if(l){var c=l.getAttribute("content");if(c){var u=c.match(/initial\-dpr=([\d\.]+)/),f=c.match(/maximum\-dpr=([\d\.]+)/);u&&(m=parseFloat(u[1]),s=parseFloat((1/m).toFixed(2))),f&&(m=parseFloat(f[1]),s=parseFloat((1/m).toFixed(2)))}}if(!m&&!s){var v=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),h=e.devicePixelRatio;m=v?h>=3&&(!m||m>=3)?3:h>=2&&(!m||m>=2)?2:1:1,s=1/m}if(n.setAttribute("data-dpr",m),!o)if(o=r.createElement("meta"),o.setAttribute("name","viewport"),o.setAttribute("content","initial-scale="+s+", maximum-scale="+s+", minimum-scale="+s+", user-scalable=no"),n.firstElementChild)n.firstElementChild.appendChild(o);else{var x=r.createElement("div");x.appendChild(o),r.write(x.innerHTML)}e.addEventListener("resize",function(){clearTimeout(a),a=setTimeout(i,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(a),a=setTimeout(i,300))},!1),"complete"===r.readyState?r.body.style.fontSize=12*m+"px":r.addEventListener("DOMContentLoaded",function(e){r.body.style.fontSize=12*m+"px"},!1),i(),d.dpr=e.dpr=m,d.refreshRem=i,d.rem2px=function(e){var t=parseFloat(e)*this.rem;return"string"==typeof e&&e.match(/rem$/)&&(t+="px"),t},d.px2rem=function(e){var t=parseFloat(e)/this.rem;return"string"==typeof e&&e.match(/px$/)&&(t+="rem"),t}}(window,window.lib||(window.lib={}));</script>
+<!-- 引入fastclick解决移动端300ms -->
+<script src="static/js/fastclick.js?v=04c1212c79dac510c331f34fabe74605"></script>
+<link rel="stylesheet" href="static/css/nov-weui.min.css?v=0a1fb2cd2fc11462825fe34a093a5d57">
+<script>
+	$(function () {
+        FastClick.attach(document.body);
+    })
+</script>
+	<link rel="stylesheet" href="css/index0.css?v=ee529e6dad46a7999b798183a9f245d1">
+
+</head>
+<body>
+	<div class="big-box">
+		<audio style="" controls="controls" class="bg-music" id="bg-music" preload="auto" src="img/music.mp3?v=e7ce7774e6cf1cc83031c72f0ab75429" loop="loop"></audio>
+		<img class="voice-icon voice-icon-start" src="img/voice-start.png?v=3adcf3b89bffdefc95dcdfbe74372f32" alt="">
+		<img class="voice-icon voice-icon-close" src="img/voice-close.png?v=4e7ba34b5dc85f535a10899e2bdf4df7" alt="">
+		<div class="index-box">
+			<div class="bg-index">
+				<img class="index-title2" src="img/index-title2.png?v=90d209393d9d7bad88149a6ee2500ebf" alt="">
+				<img src="img/eyes.gif?v=5646c279f88f0d2900a1bcfa97dccebb" alt="" class="eyes">
+				<!-- <img src="img/title.png?v=5327816df7d681fb781ff603902050f2" alt="" class="title"> -->
+				<img class="start test-btn" src="img/start.png?v=04d659844e59d34537395c4711f909d4" alt="">
+				<div class="rule-btn"></div>	
+			</div>
+			<div class="mask"></div>
+			<!-- 活动规则 -->
+			<div class="rule-img fixedcenter">
+				<img src="img/rule.png?v=164e3471a591e607f955b21da7a22a90" alt="">
+				<div class="close"></div>
+			</div>
+			<!-- 开始测试 手机号 -->
+			<div class="phone-input fixedcenter">
+				<img src="img/phone-input.png?v=487a007961b0a7d88d0707a76a64a4c0" alt="">
+				<input placeholder="请输入手机号" type="text" class="input-val">
+				<div class="btn-ok"></div>
+			</div>
+		</div>
+		<div class="anwser-box">
+			<!-- 弹层 -->
+			<div class="mask"></div>
+			<!-- 答题成功抽奖 -->
+			<div class="mask-prize res-success fixedcenter">
+				<img src="img/res-success.jpg?v=b62ee175b4f68a6da7f54579f989e134" alt="">
+				<div class="btn-prize btn-prize-cj"></div>	
+			</div>
+			<!-- 答题失败 -->
+			<div class="mask-prize res-fail fixedcenter">
+				<img src="img/res-fail.jpg?v=aced1d2e76523cab16e9d5935eea44b0" alt="">
+				<div class="btn-again"></div>
+				<div class="btn-tores"></div>
+			</div>
+			<!-- 中奖结果弹层 -->
+			<!-- 未中奖 -->
+			<div class="mask-prize prize0 fixedcenter">
+				<img src="img/prize0.jpg?v=f79f4ee2cfa97bcceb4b1eb85fab1f73" alt="">
+				<div class="btn-tores"></div>
+				<div class="btn-again"></div>
+			</div>	
+			<!-- 一等奖 -->
+			<div class="prize1 fixedcenter prize">
+				<img src="img/prize1.png?v=0e96d975e4f7d6df0324149ae62c2e02" alt="">
+				<input placeholder="请输入您的姓名" type="text" class="name">
+				<input placeholder="请输入您的QQ号" type="text" class="qq">
+				<textarea placeholder="请输入您的地址" class="address"></textarea>
+				<div class="btn-prize1 btn-prize"></div>
+			</div>
+			<!-- 二等奖 -->
+			<div class="prize2 fixedcenter prize">
+				<img src="img/prize2.png?v=a20f38614dfb2b7c29ff41ff46be0c05" alt="">
+				<input placeholder="请输入您的姓名" type="text" class="name">
+				<textarea placeholder="请输入您的地址" class="address"></textarea>
+				<div class="btn-prize2 btn-prize"></div>
+			</div>
+			<!-- 三等奖 -->
+			<div class="prize3 fixedcenter prize">
+				<img src="img/prize3.png?v=9f6e66833acbb3bcce544de30ad30298" alt="">
+				<input placeholder="请输入您的姓名" type="text" class="name">
+				<textarea placeholder="请输入您的地址" class="address"></textarea>
+				<div class="btn-prize3 btn-prize"></div>
+			</div>
+			<!-- 特别奖 -->
+			<div class="prizeSpecial fixedcenter prize">
+				<img src="img/prizeSpecial.png?v=22db3261a6a2a876ba7089301da26159" alt="">
+				<div class="btn-prizeSpecial btn-prize"></div>
+			</div>
+			<ul class="dots clearfix">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div id="subject">
+				
+			</div>
+			<div class="footer-answer">
+				<img class="next-subject-btn" src="img/next-subject.png?v=ed5bd373fdbb3d2b51e4698cdc5ac1ee" alt="">
+			</div>
+		</div>
+		<div class="result-box">
+			<img src="img/toindex.png?v=dc53e7c55b6926a7e1a98651ee9aed39" alt="">
+			<a class="btn-toindex" href="./index.html?v=f6f83d2c7c753865453d9f394a421a3a"></a>
+		</div>
+	</div>
+	
+
+	<script src="static/js/handlebars-v4.0.5.js?v=7cbf2531fdd0f6be992f372261d99f42"></script>
+	<script src="static/js/weui.min.js?v=9af6f8a08ef2f09c86e6124482ca56e7"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/index0.js?v=dcfd70d8d4e6b2d2c228fc577d3095d2"></script>
+	<!-- 题目模版 -->
+	<script id="hbsSubject" type="text/x-handlebars-template">
+		<div class="head-title">
+			<div class="vertaligM">{{{title}}}</div>
+		</div>
+		<div class="content-answers">
+			<ul class="vertaligM">
+				{{#each answers}}
+					<li data-score={{score}}>
+						<span>{{name}}</span>
+						<span>{{des}}</span>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="des-answers">
+			<div class="txt-box">
+				<p>温馨提示：<span>正确答案:{{resOk}}</span> </p>
+				<p>{{resDes}}</p>
+			</div>
+		</div>
+	</script>
+
+</body>
+</html>

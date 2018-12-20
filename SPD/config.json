@@ -1,0 +1,13 @@
+{
+	"notify": false,
+	"eslint": false,
+	"development": {
+		"rooturl": "{$rooturl}/",
+		"dir": "",
+		"port": 8080
+	},
+	"sass": {
+		"browsers": ["iOS >= 7", "Android >= 4.1"],
+		"remUnit": 75
+	}
+}

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*
+* @Author: kevin
+* @Date:   2016-04-05 13:37:33
+* @Last Modified by:   kevin
+* @Last Modified time: 2016-08-02 15:22:54
+*/
+
+/* 样式重置 */
+@import "helper/_normalize";
+
+/* 工具类 */
+@import "helper/_util";
+
+/* loading */
+@import "ui/_loading";
+
+/* public style */
+@import "ui/_global";
+html,body{
+	height: 100%;
+	background-image: url(../img/bg.png);
+	background-size: 100% 100%;
+}
+.mask{
+	z-index: 9;
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #000;
+	opacity: .75;
+}
+.fixedcenter{
+	z-index: 10;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+// 垂直居中
+.vertaligM{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	transform:translate(-50%,-50%);
+}
+.vertaligMParent{
+	display: flex;
+	justify-content: centent;
+	align-items:center;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拯救12.12拥抱圣诞君</title>
+	@@include('include/head.html')
+	<link rel="stylesheet" href="css/index0.css">
+
+</head>
+<body>
+	<div class="big-box">
+		<audio style="" controls="controls" class="bg-music" id="bg-music" preload="auto" src="img/music.mp3" loop="loop"></audio>
+		<img class="voice-icon voice-icon-start" src="img/voice-start.png" alt="">
+		<img class="voice-icon voice-icon-close" src="img/voice-close.png" alt="">
+		<div class="index-box">
+			<div class="bg-index">
+				<img class="index-title2" src="img/index-title2.png" alt="">
+				<img src="img/eyes.gif" alt="" class="eyes">
+				<!-- <img src="img/title.png" alt="" class="title"> -->
+				<img class="start test-btn" src="img/start.png" alt="">
+				<div class="rule-btn"></div>	
+			</div>
+			<div class="mask"></div>
+			<!-- 活动规则 -->
+			<div class="rule-img fixedcenter">
+				<img src="img/rule.png" alt="">
+				<div class="close"></div>
+			</div>
+			<!-- 开始测试 手机号 -->
+			<div class="phone-input fixedcenter">
+				<img src="img/phone-input.png" alt="">
+				<input placeholder="请输入手机号" type="text" class="input-val">
+				<div class="btn-ok"></div>
+			</div>
+		</div>
+		<div class="anwser-box">
+			<!-- 弹层 -->
+			<div class="mask"></div>
+			<!-- 答题成功抽奖 -->
+			<div class="mask-prize res-success fixedcenter">
+				<img src="img/res-success.jpg" alt="">
+				<div class="btn-prize btn-prize-cj"></div>	
+			</div>
+			<!-- 答题失败 -->
+			<div class="mask-prize res-fail fixedcenter">
+				<img src="img/res-fail.jpg" alt="">
+				<div class="btn-again"></div>
+				<div class="btn-tores"></div>
+			</div>
+			<!-- 中奖结果弹层 -->
+			<!-- 未中奖 -->
+			<div class="mask-prize prize0 fixedcenter">
+				<img src="img/prize0.jpg" alt="">
+				<div class="btn-tores"></div>
+				<div class="btn-again"></div>
+			</div>	
+			<!-- 一等奖 -->
+			<div class="prize1 fixedcenter prize">
+				<img src="img/prize1.png" alt="">
+				<input placeholder="请输入您的姓名" type="text" class="name">
+				<input placeholder="请输入您的QQ号" type="text" class="qq">
+				<textarea placeholder="请输入您的地址" class="address"></textarea>
+				<div class="btn-prize1 btn-prize"></div>
+			</div>
+			<!-- 二等奖 -->
+			<div class="prize2 fixedcenter prize">
+				<img src="img/prize2.png" alt="">
+				<input placeholder="请输入您的姓名" type="text" class="name">
+				<textarea placeholder="请输入您的地址" class="address"></textarea>
+				<div class="btn-prize2 btn-prize"></div>
+			</div>
+			<!-- 三等奖 -->
+			<div class="prize3 fixedcenter prize">
+				<img src="img/prize3.png" alt="">
+				<input placeholder="请输入您的姓名" type="text" class="name">
+				<textarea placeholder="请输入您的地址" class="address"></textarea>
+				<div class="btn-prize3 btn-prize"></div>
+			</div>
+			<!-- 特别奖 -->
+			<div class="prizeSpecial fixedcenter prize">
+				<img src="img/prizeSpecial.png" alt="">
+				<div class="btn-prizeSpecial btn-prize"></div>
+			</div>
+			<ul class="dots clearfix">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div id="subject">
+				
+			</div>
+			<div class="footer-answer">
+				<img class="next-subject-btn" src="img/next-subject.png" alt="">
+			</div>
+		</div>
+		<div class="result-box">
+			<img src="img/toindex.png" alt="">
+			<a class="btn-toindex" href="./index.html"></a>
+		</div>
+	</div>
+	
+
+	<script src="static/js/handlebars-v4.0.5.js"></script>
+	<script src="static/js/weui.min.js"></script>
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/index0.js"></script>
+	<!-- 题目模版 -->
+	<script id="hbsSubject" type="text/x-handlebars-template">
+		<div class="head-title">
+			<div class="vertaligM">{{{title}}}</div>
+		</div>
+		<div class="content-answers">
+			<ul class="vertaligM">
+				{{#each answers}}
+					<li data-score={{score}}>
+						<span>{{name}}</span>
+						<span>{{des}}</span>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="des-answers">
+			<div class="txt-box">
+				<p>温馨提示：<span>正确答案:{{resOk}}</span> </p>
+				<p>{{resDes}}</p>
+			</div>
+		</div>
+	</script>
+
+</body>
+</html>
